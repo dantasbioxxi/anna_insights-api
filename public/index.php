@@ -46,4 +46,8 @@ $router = new Router();
 require __DIR__ . '/../routes.php';
 
 // Dispatch Request
-$router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+$uri = $_SERVER['REQUEST_URI'];
+$uri = preg_replace('#^/anna_insights-api#', '', $uri);
+
+$router->dispatch($_SERVER['REQUEST_METHOD'], $uri);
+#$router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
