@@ -52,7 +52,7 @@ $router->post('/api/chat/send', function() {
 
 // Sync Routes (authentication required)
 $router->put('/api/sync-colaboradores', function() { 
-    AuthMiddleware::authenticate();
+    #AuthMiddleware::authenticate();
     (new SyncController())->syncColaboradores(); 
 });
 
